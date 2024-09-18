@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";  // Corrected import
 import { logoLight } from "../../assets/images";
 
 const SignIn = () => {
@@ -11,19 +11,24 @@ const SignIn = () => {
   // ============= Error Msg Start here =================
   const [errEmail, setErrEmail] = useState("");
   const [errPassword, setErrPassword] = useState("");
-
   // ============= Error Msg End here ===================
   const [successMsg, setSuccessMsg] = useState("");
+
+  // Initialize navigate
+  const navigate = useNavigate();
+
   // ============= Event Handler Start here =============
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setErrEmail("");
   };
+  
   const handlePassword = (e) => {
     setPassword(e.target.value);
     setErrPassword("");
   };
   // ============= Event Handler End here ===============
+
   const handleSignUp = (e) => {
     e.preventDefault();
 
@@ -34,6 +39,7 @@ const SignIn = () => {
     if (!password) {
       setErrPassword("Create a password");
     }
+    
     // ============== Getting the value ==============
     if (email && password) {
       setSuccessMsg(
@@ -41,8 +47,14 @@ const SignIn = () => {
       );
       setEmail("");
       setPassword("");
+
+      // Simulate successful login after 2 seconds and redirect
+      setTimeout(() => {
+        navigate("/user"); // Corrected navigation
+      }, 2000);
     }
   };
+
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <div className="w-1/2 hidden lgl:inline-flex h-full text-white">
@@ -62,11 +74,11 @@ const SignIn = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-               "Ready to elevate your kitchen experience?"
+                "Ready to elevate your kitchen experience?"
               </span>
               <br />
-               SignIn to KitchenHall and unlock access to premium tools,
-               personalized recommendations, and exclusive content designed just for you!
+              SignIn to KitchenHall and unlock access to premium tools,
+              personalized recommendations, and exclusive content designed just for you!
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
@@ -75,11 +87,11 @@ const SignIn = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-               "Unlock the full KitchenHall experience!"
+                "Unlock the full KitchenHall experience!"
               </span>
               <br />
-               SignIn to access exclusive services, personalized recommendations,
-               and everything you need to make your kitchen the heart of your home.
+              SignIn to access exclusive services, personalized recommendations,
+              and everything you need to make your kitchen the heart of your home.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
@@ -91,8 +103,8 @@ const SignIn = () => {
                 Trusted by online Shoppers
               </span>
               <br />
-               "Join the community of savvy online shoppers who trust KitchenHall for seamless and secure service.
-               SignIn to access exclusive features, personalized recommendations, and a shopping experience designed with you in mind."
+              "Join the community of savvy online shoppers who trust KitchenHall for seamless and secure service.
+              SignIn to access exclusive features, personalized recommendations, and a shopping experience designed with you in mind."
             </p>
           </div>
           <div className="flex items-center justify-between mt-10">
@@ -122,7 +134,7 @@ const SignIn = () => {
             <Link to="/signup">
               <button
                 className="w-full h-10 bg-primeColor text-gray-200 rounded-md text-base font-titleFont font-semibold 
-            tracking-wide hover:bg-black hover:text-white duration-300"
+                tracking-wide hover:bg-black hover:text-white duration-300"
               >
                 Sign Up
               </button>
@@ -177,7 +189,7 @@ const SignIn = () => {
 
                 <button
                   onClick={handleSignUp}
-                  className="bg-primeColor hover:bg-black text-gray-200 hover:text-white cursor-pointer w-full text-base font-medium h-10 rounded-md  duration-300"
+                  className="bg-primeColor hover:bg-black text-gray-200 hover:text-white cursor-pointer w-full text-base font-medium h-10 rounded-md duration-300"
                 >
                   Sign In
                 </button>

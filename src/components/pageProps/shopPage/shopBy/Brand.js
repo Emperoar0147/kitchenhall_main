@@ -14,20 +14,120 @@ const Brand = () => {
   const brands = [
     {
       _id: 900,
-      title: "Pantum",
+      title: "LG",
     },
     {
       _id: 901,
-      title: "Hp",
+      title: "Bosch",
     },
     {
       _id: 902,
-      title: "Epson",
+      title: "samsung",
     },
 
     {
       _id: 903,
-      title: "Ricoh",
+      title: "Whirlpool",
+    },
+
+    {
+      _id: 904,
+      title: "GE",
+    },
+
+    {
+      _id: 905,
+      title: "Frigidaire",
+    },
+
+    {
+      _id: 906,
+      title: "KitchenAid",
+    },
+
+    {
+      _id: 907,
+      title: "Miele",
+    },
+
+    {
+      _id: 908,
+      title: "Beko",
+    },
+
+    {
+      _id: 909,
+      title: "Maytag",
+    },
+
+    {
+      _id: 910,
+      title: "Electrolux",
+    },
+
+    {
+      _id: 911,
+      title: "Panasonic",
+    },
+
+    {
+      _id: 912,
+      title: "Amana",
+    },
+
+    {
+      _id: 913,
+      title: "Gaggenau",
+    },
+
+    {
+      _id: 914,
+      title: "Haire",
+    },
+
+    {
+      _id: 915,
+      title: "Hotpoint",
+    },
+
+    {
+      _id: 916,
+      title: "Thermodore",
+    },
+
+    {
+      _id: 917,
+      title: "Viking",
+    },
+
+    {
+      _id: 918,
+      title: "Bertazzoni",
+    },
+
+    {
+      _id: 919,
+      title: "Dacor",
+    },
+
+    {
+      _id: 920,
+      title: "Fisher & Paykel",
+    },
+
+    {
+      _id: 921,
+      title: "jennAir",
+    },
+
+    {
+      _id: 922,
+      title: "Kenmore",
+    },
+
+    {
+      _id: 923,
+      title: "ASKO",
     },
   ];
 
